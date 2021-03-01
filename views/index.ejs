@@ -28,15 +28,15 @@
                 <div class="col-9">
             <section class="form-container border border-secondary">
                 <div class="container-sm p-5">
-                    <form class="form-signup" novalidate>
+                    <form class="form-signup" action="/test" method="POST" novalidate>
                         <div class="container d-inline-block">
-                            <div class="row">
+                            <div class="row"> <!-- quien emite-->
                                 <div class="col-4 text-right">
                                     <h4>Nombre :</h4>
                                 </div>
                                 <div class="col-6">
                                     <div class="name-container input-box">
-                                        <input type="text" id="name"
+                                        <input type="text" id="name" name="name"
                                             class="form-control"
                                             placeholder="">
                                     </div>
@@ -44,71 +44,55 @@
                             </div>
                         </div>
                         <div class="container d-inline-block">
-                            <div class="row">
+                            <div class="row"> <!-- opcion region-->
                                 <div class="col-4 text-right mt-3">
                                     <h4>Procedencia :</h4>
                                 </div>
                                 <div class="col-6 mt-3">
                                     <div class="form-group input-box">
-                                        <select class="form-control">
-                                            <option value="0"> --- </option>
-                                            <option value="opcion a">1ra Region
-                                                de Tarapaca</option>
-                                            <option value="opcion b">2da Region
-                                                de Antofagasta</option>
-                                            <option value="opcion c">3ra Region
-                                                de Atacama</option>
-                                            <option value="opcion d">4ta Region
-                                                de Coquimbo</option>
-                                            <option value="opcion e">5ta Region
-                                                de Valparaiso</option>
-                                            <option value="opcion f">6ta Region
-                                                de O'Higgins</option>
-                                            <option value="opcion g">7ma Region
-                                                del Maule</option>
-                                            <option value="opcion h">8va Region
-                                                del Bio-Bio</option>
-                                            <option value="opcion i">9na Region
-                                                de la Araucania </option>
-                                            <option value="opcion j">10ma Region
-                                                de los Lagos</option>
-                                            <option value="opcion k">11ra Region
-                                                de Aysen</option>
-                                            <option value="opcion l">12da Region
-                                                de Magallanes</option>
-                                            <option value="opcion m">14ra Region
-                                                de los Rios</option>
-                                            <option value="opcion n">15ta Region
-                                                de Arica y Parinacota</option>
-                                            <option value="opcion o">16ta Region
-                                                de Ñuble</option>
-                                            <option value="opcion p">Region
-                                                Metropolitana</option>
+                                        <select class="form-control" name="region">
+                                            <option value=""> --- </option>
+                                            <option value="1ra Region de Tarapaca">1ra Region de Tarapaca</option>
+                                            <option value="2da Region de Antofagasta">2da Region de Antofagasta</option>
+                                            <option value="3ra Region de Atacama">3ra Region de Atacama</option>
+                                            <option value="4ta Region de Coquimbo">4ta Region de Coquimbo</option>
+                                            <option value="5ta Region de Valparaiso">5ta Region de Valparaiso</option>
+                                            <option value="6ta Region de O'Higgins">6ta Region de O'Higgins</option>
+                                            <option value="7ma Region del Maule">7ma Region del Maule</option>
+                                            <option value="8va Region del Bio-Bio">8va Region del Bio-Bio</option>
+                                            <option value="9na Region de la Araucania">9na Region de la Araucania </option>
+                                            <option value="10ma Region de los Lagos">10ma Region de los Lagos</option>
+                                            <option value="11ra Region de Aysen">11ra Region de Aysen</option>
+                                            <option value="12da Region de Magallanes">12da Region de Magallanes</option>
+                                            <option value="14ra Region de los Rios">14ra Region de los Rios</option>
+                                            <option value="15ta Region de Arica y Parinacota">15ta Region de Arica y Parinacota</option>
+                                            <option value="16ta Region de Ñuble">16ta Region de Ñuble</option>
+                                            <option value="Region Metropolitana">Region Metropolitana</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="container d-inline-block">
-                            <div class="row">
+                            <div class="row"> <!-- opcion lenguaje -->
                                 <div class="col-4 text-right mt-1">
                                     <h4>Lenguaje :</h4>
                                 </div>
                                 <div class="col-6 mt-1">
                                 <div class="form-group input-box">
-                                <select class="form-control">
-                                    <option value="0">Selecciona tu opcion</option>
-                                    <option value="opcion a"> HTML</option>
-                                    <option value="opcion b"> CSS</option>
-                                    <option value="opcion c"> LESS</option>
-                                    <option value="opcion d"> JQUERY</option>
-                                    <option value="opcion e"> AJAX</option>
-                                    <option value="opcion f"> MYSQL</option>
-                                    <option value="opcion g"> EXPRESS</option>
-                                    <option value="opcion h"> SEQUELIZE</option>
-                                    <option value="opcion i"> SOCKET</option>
-                                    <option value="opcion j"> GIT</option>
-                                    <option value="opcion k"> No esta en el listado</option>
+                                <select class="form-control" name="lenguaje">
+                                    <option value=""> --- </option>
+                                    <option value="HTML"> HTML</option>
+                                    <option value="CSS"> CSS</option>
+                                    <option value="LESS"> LESS</option>
+                                    <option value="JQUERY"> JQUERY</option>
+                                    <option value="AJAX"> AJAX</option>
+                                    <option value="MYSQL"> MYSQL</option>
+                                    <option value="EXPRESS"> EXPRESS</option>
+                                    <option value="SEQUELIZE"> SEQUELIZE</option>
+                                    <option value="SOCKET"> SOCKET</option>
+                                    <option value="GIT"> GIT</option>
+                                    <option value="No esta en el listado"> No esta en el listado</option>
                                 </select>
                                 </div>
                                 </div>
@@ -117,10 +101,8 @@
                         <div class="container">
                             <div class="col-12">
                             <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Comentario
-                                    : (Opcional)</label>
-                                <textarea class="form-control"
-                                    id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <label for="exampleFormControlTextarea1">Comentario : (Opcional)</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message"></textarea>
                             </div>
                         </div>
                         </div>
