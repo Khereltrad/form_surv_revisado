@@ -28,7 +28,9 @@
                 <div class="col-9">
                     <section class="form-container border border-secondary">
                         <div class="container-sm p-5">
-                            <form class="form-signup" action="/test" method="GET" novalidate>
+                            <!-- <form class="form-signup" action="/test" method="GET" novalidate> -->
+                            <% for(fichas of fichas){ %>
+                                <input type="hidden" name="fichaId" value="<%=fichas.id%>">     
                                 <div class="container d-inline-block"> <!-- bloque de nombre y espacio ejs -->
                                     <h3>Información resibida :</h3>
                                     <div class="row">
@@ -86,6 +88,7 @@
                             </div>
                         </div>
                                 </div>
+                            <% } %>     
                                 <div class="container d-inline-block"> <!-- boton de regreso -->
                                     <div class="row">
                                         <div class="col-8"></div>
@@ -94,7 +97,7 @@
                                         </div>
                                     </div>
                                 </div>                       
-                            </form>
+                            <!-- </form> -->
                         </div>
                     </section>
                 </div>
