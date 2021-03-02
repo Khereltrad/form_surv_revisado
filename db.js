@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const sql = new Sequelize('simplsurv', 'root', 'M11.n1.5am', { host: 'localhost', dialect: 'mysql' });
+const sql = new Sequelize('simplsurv', 'root', '', { host: 'localhost', dialect: 'mysql' });
 
 const Mensaje = sql.define('fichas', {
   id: {
@@ -33,7 +33,6 @@ const Mensaje = sql.define('fichas', {
     allowNull: true,
   },
 },{ timestramps: true });
-
 
 sql.sync().then(() => {
   console.log('Base de datos y tablas creadas');

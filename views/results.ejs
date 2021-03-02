@@ -3,23 +3,15 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>surv.ejs</title>
+        <title>results.ejs</title>
         <link rel="icon" type="image/ico" href="img/favicon.ico">
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="../public/css/bootstrap.min.css">
-        <link
-            href="https://fonts.googleapis.com/css?family=Prompt:200,300,400,500"
-            rel="stylesheet">
-        <link rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
-            crossorigin="anonymous">
-
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Prompt:200,300,400,500" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
         <script src="../public/js/jquery-3.5.1.min.js"></script>
-        <script src="../public/css/bootstrap.min.css"></script>
+        <script src="../public/js/bootstrap.bundle.min.js"></script>
+        <style>
+           h5,h4,h3,h2,h1{margin-bottom: 0;};
+        </style>
     </head>
     <body>
         <div class="container p-5">
@@ -28,66 +20,59 @@
                 <div class="col-9">
                     <section class="form-container border border-secondary">
                         <div class="container-sm p-5">
-                            <!-- <form class="form-signup" action="/test" method="GET" novalidate> -->
-                            <% for(fichas of fichas){ %>
+                        <% for(fichas of fichas){ %>
                                 <input type="hidden" name="fichaId" value="<%=fichas.id%>">     
                                 <div class="container d-inline-block"> <!-- bloque de nombre y espacio ejs -->
-                                    <h3>Información resibida :</h3>
+                                    <h3 style=" font-style: oblique;font-family: auto;">Información resibida :</h3>
                                     <div class="row">
-                                        <div class="col-4 text-right mt-4">
+                                        <div class="col-3 text-right mt-4">
                                             <div class="col-4"></div>
-                                                <h4> Nombre :    </h4>                                             
+                                                <h4 style="font-family: math;font-size: x-large;font-style: oblique;font-weight: 700;"> Nombre : </h4>                                             
                                             </div>
-                                        <div class="col-6 mt-3 text-left align-middle">
+                                        <div class="col-7 mt-3 text-left align-middle">
                                             <div class="form-group input-box mt-2">
-                                                <%= fichas.name %> 
+                                                <h5 style="font: 15px !important;font-style: italic;font-family: math;"> <%= fichas.name %> </h5> 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="container d-inline-block"> <!-- bloque de procedencia-->
                             <div class="row">
-                                <div class="col-4 text-right mt-3">
-                                    <h4>Procedencia :</h4>
+                                <div class="col-3 text-right mt-2">
+                                    <h4 style="font-family: math;font-size: x-large;font-style: oblique;font-weight: 700;">Procedencia :</h4>
                                 </div>
-                                <div class="col-6 mt-3">
+                                <div class="col-7 mt-2">
                                     <div class="form-group input-box">
-                                        <%= fichas.region %>
+                                        <h5 style="font: 15px !important;font-style: italic;font-family: math;"><%= fichas.region %></h5>
                                     </div>
                                 </div>
                             </div>
                                 </div>
                                 <div class="container d-inline-block"> <!-- bloque de mensajes -->
                                     <div class="row">
-                                        <div class="col-4 text-right mt-1">
-                                            <h4>Lenguaje :</h4>
+                                        <div class="col-3 text-right mt-1">
+                                            <h4 style="font-family: math;font-size: x-large;font-style: oblique;font-weight: 700;">Lenguaje :</h4>
                                         </div>
-                                        <div class="col-6 mt-1">
+                                        <div class="col-7 mt-1">
                                             <div class="form-group input-box">
-                                                <%= fichas.lenguaje %>
+                                                <h5 style="font: 15px !important;font-style: italic;font-family: math;"><%= fichas.lenguaje %></h5>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="container d-inline-block"> <!-- bloque de comentario -->
                                     <div class="row">
-                                        <div class="col-4 text-right mt-1">
-                                            <h4>Comentario :</h4>
+                                        <div class="col-3 text-right mt-1">
+                                            <h4 style="font-family: math;font-size: x-large;font-style: oblique;font-weight: 700;">Comentario :</h4>
                                         </div>
-                                        <div class="col-6 mt-1"></div>
+                                        <div class="col-7 mt-1"></div>
                                     </div>
                                 </div>
                                 <div class="container"><br> <!--- zona del comentario -->
-                            <div class="col-12">
-                            <div class="form-group">
-                                <!-- <label for="exampleFormControlTextarea1">Comentario
-                                    : (Opcional)</label> -->
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">
-                                    <%= fichas.message %>
-                                </textarea>
+                            <div class="col-12 font-italic font-weight-normal mb-5" style="font-family: none;">                            
+                                <h5 rows="3">   " <%= fichas.message %> "  </h5>
                             </div>
-                        </div>
-                                </div>
+                                </div><br>
                             <% } %>     
                                 <div class="container d-inline-block"> <!-- boton de regreso -->
                                     <div class="row">
