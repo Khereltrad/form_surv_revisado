@@ -1,0 +1,13 @@
+Formulario Encuesta
+
+ID                      23
+Proyecto                form-survey
+Objetivos Pendientes    Ninguno
+
+Estado                  Funcionalidad completa
+                        Comunicación con MYSQL Operativa
+                        Estilos básicos completo
+Para Avanzar/Terminar   Mejorar estilos y personalizacion
+Repositorio             SI
+GitHub                  https://github.com/Khereltrad/form_surv_revisado
+En Plataforma           SI
