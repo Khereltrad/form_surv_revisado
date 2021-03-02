@@ -19,6 +19,8 @@
                 <div class="col-9">
                     <section class="form-container border border-secondary">
                     <div class="container-sm p-5">
+                        <div id="datamsg"> </div>
+                        <div id="datanum"> </div>
                         <form class="form-signup" id="datosform" action="/test" method="POST" novalidate>
                             <div class="container d-inline-block">
                                 <div class="row"> <!-- quien emite-->
@@ -39,7 +41,7 @@
                                 </div>
                                 <div class="col-6 mt-3">
                                     <div class="form-group input-box">
-                                        <select class="form-control" name="region">
+                                        <select class="form-control" id="region" name="region">
                                             <option value=""> --- </option>
                                             <option value="1ra Region de Tarapaca">1ra Region de Tarapaca</option>
                                             <option value="2da Region de Antofagasta">2da Region de Antofagasta</option>
@@ -69,7 +71,7 @@
                                 </div>
                                 <div class="col-6 mt-1">
                                     <div class="form-group input-box">
-                                        <select class="form-control" name="lenguaje">
+                                        <select class="form-control" id="lenguaje" name="lenguaje">
                                     <option value=""> --- </option>
                                     <option value="HTML"> HTML</option>
                                     <option value="CSS"> CSS</option>
@@ -117,19 +119,23 @@
                 
                 $('#datosform').on('submit',(ev) =>{
                     ev.preventDefault();
-                    socket.emit('formulario_publicacion',{ msg: 'Testeo de conexion de envio' });    
-                    
-                    // console.log(msg);
-                    // const datos ={        };
 
+                    const datos ={
+                        name: $('#name').val(),
+                        location: $('#region').val(),
+                        language: $('#lenguaje').val(),
+                        message: $('#exampleFormControlTextarea1').val(),
+                    }
+
+                    socket.emit('formulario_publicacion',datos);    
                 });
 
                 socket.on('mensaje_actualizado', function (data) { 
-                    
-                    console.log(data);});
-                socket.on('numero_aleatorio', function (data) {    console.log(data);});
-                
-             })
+                    $('#datamsg').html(`Nombre: ${data.name}. Ubicación: ${data.location}. Lenguaje: ${data.language}. Comentario: ${data.message}.`);
+                    console.log(data);
+                });
+                socket.on('numero_aleatorio', function (data) { $('#datanum').html(data); });
+            });
 
         </script>
     </body>
